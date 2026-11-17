@@ -1,0 +1,294 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --fondo: #090b16;
+    --panel: #121629;
+    --texto: #f4f5ff;
+    --suave: #aab0ca;
+    --azul: #35d8ff;
+    --morado: #9b72ff;
+}
+
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--fondo);
+    color: var(--texto);
+    font-family: Inter, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    background: #090b16ee;
+    border-bottom: 1px solid #252b46;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+}
+
+.navegacion {
+    max-width: 1120px;
+    margin: auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-weight: 800;
+    color: white;
+    text-decoration: none;
+    font-size: 1.25rem;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--azul);
+}
+
+.enlaces {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.enlaces a {
+    color: var(--suave);
+    text-decoration: none;
+}
+
+.enlaces a:hover {
+    color: var(--azul);
+}
+
+/* INICIO */
+
+.hero {
+    max-width: 1120px;
+    margin: auto;
+    padding: 80px 24px;
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.hero img {
+    width: 100%;
+    max-width: 470px;
+    justify-self: center;
+}
+
+.etiqueta {
+    color: var(--azul);
+    font-size: .72rem;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 6vw, 4.7rem);
+    margin-bottom: 22px;
+}
+
+h1 span {
+    color: var(--azul);
+}
+
+.hero-texto p {
+    color: var(--suave);
+}
+
+.boton {
+    display: inline-block;
+    margin-top: 18px;
+    padding: 13px 23px;
+    border-radius: 7px;
+    background: linear-gradient(
+        100deg,
+        var(--azul),
+        var(--morado)
+    );
+    color: #080b17;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+/* SECCIONES */
+
+.seccion {
+    max-width: 1120px;
+    margin: auto;
+    padding: 72px 24px;
+}
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.titulo-seccion h2,
+.destacados h2 {
+    font-size: 2.3rem;
+}
+
+.titulo-seccion p {
+    color: var(--suave);
+}
+
+/* TARJETAS */
+
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.tarjeta {
+    background: var(--panel);
+    border: 1px solid #252b46;
+    border-radius: 14px;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: var(--azul);
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.tarjeta-contenido {
+    padding: 22px;
+}
+
+.tarjeta p {
+    color: var(--suave);
+}
+
+/* DESTACADOS */
+
+.destacados {
+    background: linear-gradient(
+        115deg,
+        #151a34,
+        #101326
+    );
+    border-block: 1px solid #252b46;
+    padding: 65px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+.destacados p {
+    color: var(--suave);
+}
+
+.dato {
+    min-width: 170px;
+    text-align: center;
+    border-left: 1px solid #424969;
+    padding-left: 35px;
+}
+
+.dato strong {
+    display: block;
+    font-size: 4rem;
+    color: var(--azul);
+}
+
+.dato span {
+    color: var(--suave);
+}
+
+/* CONSEJOS */
+
+.lista-consejos {
+    max-width: 800px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-consejos li {
+    display: flex;
+    gap: 22px;
+    padding: 22px 0;
+    border-bottom: 1px solid #252b46;
+}
+
+.lista-consejos li > span {
+    font-size: 1.4rem;
+    color: var(--morado);
+}
+
+.lista-consejos p {
+    color: var(--suave);
+    margin: 0;
+}
+
+/* PIE DE PAGINA */
+
+footer {
+    border-top: 1px solid #252b46;
+    padding: 28px 24px;
+    text-align: center;
+    color: var(--suave);
+}
+
+/* DISEÑO PARA CELULARES */
+
+@media(max-width: 720px) {
+
+    .navegacion {
+        flex-direction: column;
+    }
+
+    .enlaces {
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .hero img {
+        max-width: 340px;
+    }
+
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+
+    .destacados {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dato {
+        border-left: 0;
+        border-top: 1px solid #424969;
+        padding: 22px 0 0;
+    }
+}
+
+
